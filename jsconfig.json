@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".", // This sets the base directory for resolving non-relative module names
+        "paths": {
+          "/*": ["./*"], // Allow the use of root-relative imports
+      }
+    },
+    "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"], // Include all JS, JSX, TS, and TSX files
+    "exclude": ["node_modules"] // Exclude node_modules to prevent unnecessary indexing
+  }
+  
