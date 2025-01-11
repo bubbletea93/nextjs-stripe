@@ -2,7 +2,7 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 // @mui/icons-material
@@ -26,18 +26,18 @@ export default function PricingPage() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
-  });
+  }, []);
+
   const classes = useStyles();
   return (
     <div>
       <Header
-        brand="NextJS Material Kit PRO"
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="transparent"
         changeColorOnScroll={{
           height: 300,
-          color: "info"
+          color: "info",
         }}
       />
 
@@ -53,11 +53,12 @@ export default function PricingPage() {
                 classes.textCenter
               )}
             >
-              <h1 className={classes.title}>Let{"'"}s get started</h1>
+              <h1 className={classes.title}>No Takesies Backsies</h1>
               <h4>
-                To get started, you will need to choose a plan for your needs.
-                You can opt in for the monthly of annual options and go with one
-                fo the three listed below.
+                Ready to make a choice you won't back out of? Pick the plan for
+                you that works for you, and let our seamless Stripe integration
+                handle the rest. Choose from one of the three awesome options
+                below and let's get this party started!
               </h4>
             </GridItem>
           </GridContainer>
@@ -73,55 +74,10 @@ export default function PricingPage() {
       <Footer
         content={
           <div>
-            <div className={classes.left}>
-              <List className={classes.list}>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/?ref=njsmkp-pricing"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Creative Tim
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/presentation?ref=njsmkp-pricing"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    About us
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="http://blog.creative-tim.com/?ref=njsmkp-pricing"
-                    className={classes.block}
-                  >
-                    Blog
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/license?ref=njsmkp-pricing"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Licenses
-                  </a>
-                </ListItem>
-              </List>
-            </div>
             <div className={classes.right}>
-              &copy; {1900 + new Date().getYear()} , made with{" "}
-              <Favorite className={classes.icon} /> by{" "}
-              <a
-                href="https://www.creative-tim.com?ref=njsmkp-pricing"
-                target="_blank"
-              >
-                Creative Tim
-              </a>{" "}
-              for a better web.
+              &copy; {new Date().getFullYear()} , made with{" "}
+              <Favorite className={classes.icon} /> using{" "}
+              <strong>Stripe</strong> for secure payments.
             </div>
           </div>
         }
